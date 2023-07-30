@@ -47,4 +47,6 @@ return require('packer').startup(function(use)
 	use 'andweeb/presence.nvim'
 	-- Jupyter-Notebooks
 	use 'luk400/vim-jukit'
+	-- Indentation indicator
+	use "lukas-reineke/indent-blankline.nvim"
 end)
