@@ -45,4 +45,6 @@ return require('packer').startup(function(use)
 	use 'jbyuki/nabla.nvim'
 	-- Discord presence
 	use 'andweeb/presence.nvim'
+	-- Jupyter-Notebooks
+	use 'luk400/vim-jukit'
 end)

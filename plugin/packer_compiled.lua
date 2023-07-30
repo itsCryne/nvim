@@ -164,6 +164,11 @@ _G.packer_plugins = {
     path = "/home/paddi/.local/share/nvim/site/pack/packer/start/vim-better-whitespace",
     url = "https://github.com/ntpeters/vim-better-whitespace"
   },
+  ["vim-jukit"] = {
+    loaded = true,
+    path = "/home/paddi/.local/share/nvim/site/pack/packer/start/vim-jukit",
+    url = "https://github.com/luk400/vim-jukit"
+  },
   vimtex = {
     loaded = true,
     path = "/home/paddi/.local/share/nvim/site/pack/packer/start/vimtex",
