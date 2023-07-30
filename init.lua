@@ -70,6 +70,8 @@ require("coc-bindings")
 
 local remap = vim.api.nvim_set_keymap
 local npairs = require('nvim-autopairs')
+
+--- coc compat
 npairs.setup({map_cr=false})
 
 _G.MUtils= {}
