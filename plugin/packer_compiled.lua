@@ -190,8 +190,10 @@ _G.packer_plugins = {
     url = "https://github.com/ntpeters/vim-better-whitespace"
   },
   ["vim-jukit"] = {
-    loaded = true,
-    path = "/home/paddi/.local/share/nvim/site/pack/packer/start/vim-jukit",
+    loaded = false,
+    needs_bufread = false,
+    only_cond = false,
+    path = "/home/paddi/.local/share/nvim/site/pack/packer/opt/vim-jukit",
     url = "https://github.com/luk400/vim-jukit"
   },
   vimtex = {
@@ -202,6 +204,14 @@ _G.packer_plugins = {
 }
 
 time([[Defining packer_plugins]], false)
+vim.cmd [[augroup packer_load_aucmds]]
+vim.cmd [[au!]]
+  -- Filetype lazy-loads
+time([[Defining lazy-load filetype autocommands]], true)
+vim.cmd [[au FileType ipynb ++once lua require("packer.load")({'vim-jukit'}, { ft = "ipynb" }, _G.packer_plugins)]]
+vim.cmd [[au FileType py ++once lua require("packer.load")({'vim-jukit'}, { ft = "py" }, _G.packer_plugins)]]
+time([[Defining lazy-load filetype autocommands]], false)
+vim.cmd("augroup END")
 
 _G._packer.inside_compile = false
 if _G._packer.needs_bufread == true then

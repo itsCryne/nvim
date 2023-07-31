@@ -44,7 +44,11 @@ return require('packer').startup(function(use)
 	-- Discord presence
 	use 'andweeb/presence.nvim'
 	-- Jupyter-Notebooks
-	use 'luk400/vim-jukit'
+	use{
+               'luk400/vim-jukit',
+               ft = {'ipynb', 'py'}
+	}
+
 	-- Indentation indicator
 	use "lukas-reineke/indent-blankline.nvim"
 	-- Debugging
