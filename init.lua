@@ -14,10 +14,23 @@ require('onenord').setup({
 	fade_nc = true
 })
 
--- rust ghost-character hints
+-- rust tools
 local rt = require("rust-tools")
-rt.setup()
+rt.setup({
+  server = {
+    on_attach = function(_, bufnr)
+      -- Hover actions
+      vim.keymap.set("n", "<C-space>", rt.hover_actions.hover_actions, { buffer = bufnr })
+      -- Code action groups
+      vim.keymap.set("n", "<Leader>a", rt.code_action_group.code_action_group, { buffer = bufnr })
+    end,
+  },
+})
+
 rt.inlay_hints.enable()
+
+-- lsp
+require("lsp-settings")
 
 -- rainbow brackets
 local rainbow_delimiters = require 'rainbow-delimiters'
@@ -65,26 +78,8 @@ require('lualine').setup({
 	options = { theme = 'onelight' }
 })
 
--- load coc options
-require("coc-bindings")
-
-local remap = vim.api.nvim_set_keymap
 local npairs = require('nvim-autopairs')
-
---- coc compat
-npairs.setup({map_cr=false})
-
-_G.MUtils= {}
-
-MUtils.completion_confirm=function()
-	if vim.fn["coc#pum#visible"]() ~= 0  then
-		return vim.fn["coc#pum#confirm"]()
-	else
-		return npairs.autopairs_cr()
-	end
-end
-
-remap('i' , '<CR>','v:lua.MUtils.completion_confirm()', {expr = true , noremap = true})
+npairs.setup()
 
 -- ASCII math 
 require"nabla".enable_virt()

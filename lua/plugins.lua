@@ -10,8 +10,6 @@ return require('packer').startup(function(use)
 	}
 	-- NVim LSP config
 	use("neovim/nvim-lspconfig")
-	-- Autocomplete etc.
-	use {'neoclide/coc.nvim', branch = 'release'}
 	-- Inline hints etc.
 	use 'simrat39/rust-tools.nvim'
 	-- Rust Syntax/Formatting
@@ -49,4 +47,11 @@ return require('packer').startup(function(use)
 	use 'luk400/vim-jukit'
 	-- Indentation indicator
 	use "lukas-reineke/indent-blankline.nvim"
+	-- Debugging
+	use 'nvim-lua/plenary.nvim'
+	use 'mfussenegger/nvim-dap'
+	-- Autocomplete
+	  use { 'ms-jpq/coq_nvim', run = 'python3 -m coq deps' }
+	  use 'ms-jpq/coq.artifacts'
+	  use 'ms-jpq/coq.thirdparty'
 end)
