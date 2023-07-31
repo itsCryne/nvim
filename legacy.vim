@@ -51,3 +51,6 @@ set autoread
 
 " nabla
 nnoremap <leader>p :lua require("nabla").popup()<CR> " Customize with popup({border = ...})  : `single` (default), `double`, `rounded`
+
+" Open tree in new tab
+au TabNewEntered * NvimTreeOpen
