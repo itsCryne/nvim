@@ -84,6 +84,23 @@ npairs.setup()
 -- ASCII math 
 require"nabla".enable_virt()
 
+-- Telescope
+local tel = require("telescope")
+tel.setup()
+tel.load_extension("fzf")
+
+-- crates autocomplete
+require('crates').setup {
+    src = {
+        coq = {
+            enabled = true,
+            name = "crates.nvim",
+        },
+    },
+}
+
+-- disable repetitive keystrokes etc.
+require("hardtime").setup()
 -- load legacy.vim
 vim.cmd([[ so ~/.config/nvim/legacy.vim ]])
 
