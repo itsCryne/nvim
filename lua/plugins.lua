@@ -111,4 +111,5 @@ return require('packer').startup(function(use)
 			require('neoclip').setup()
 		end,
 	}
+	use 'tpope/vim-fugitive'
 end)
