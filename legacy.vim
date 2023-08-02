@@ -39,9 +39,6 @@ nnoremap <silent> ;xmp :leftabove split %<CR>
 " faster updates!
 set updatetime=100
 
-" no hidden buffers
-set nohidden
-
 " history
 set undodir=~/.cache/nvim/undodir
 set undofile
