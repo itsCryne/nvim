@@ -6,6 +6,9 @@ set mouse=
 syntax enable
 filetype plugin indent on
 
+" cargo run
+nnoremap <Leader>cr :w <bar> !cargo run<CR>
+
 " easy buffer resize
 :nmap <Esc>l :vertical res +1<Enter>
 :nmap <Esc>h :vertical res -1<Enter>
