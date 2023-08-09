@@ -45,8 +45,8 @@ return require('packer').startup(function(use)
 	use 'andweeb/presence.nvim'
 	-- Jupyter-Notebooks
 	use{
-               'luk400/vim-jukit',
-               ft = {'ipynb', 'py'}
+		'luk400/vim-jukit',
+		ft = {'ipynb', 'py'}
 	}
 
 	-- Indentation indicator
@@ -54,10 +54,15 @@ return require('packer').startup(function(use)
 	-- Debugging
 	use 'nvim-lua/plenary.nvim'
 	use 'mfussenegger/nvim-dap'
+	-- snippets
+	use 'L3MON4D3/LuaSnip'
+	use 'saadparwaiz1/cmp_luasnip'
 	-- Autocomplete
-	use { 'ms-jpq/coq_nvim', run = 'python3 -m coq deps' }
-	use 'ms-jpq/coq.artifacts'
-	use 'ms-jpq/coq.thirdparty'
+	use 'hrsh7th/cmp-nvim-lsp'
+	use 'hrsh7th/cmp-buffer'
+	use 'hrsh7th/cmp-path'
+	use 'hrsh7th/cmp-cmdline'
+	use 'hrsh7th/nvim-cmp'
 	-- Telescope (searching etc.)
 	use {
 		'nvim-telescope/telescope.nvim',

@@ -74,6 +74,11 @@ end
 time([[try_loadstring definition]], false)
 time([[Defining packer_plugins]], true)
 _G.packer_plugins = {
+  LuaSnip = {
+    loaded = true,
+    path = "/home/paddi/.local/share/nvim/site/pack/packer/start/LuaSnip",
+    url = "https://github.com/L3MON4D3/LuaSnip"
+  },
   ale = {
     loaded = true,
     path = "/home/paddi/.local/share/nvim/site/pack/packer/start/ale",
@@ -90,20 +95,30 @@ _G.packer_plugins = {
     path = "/home/paddi/.local/share/nvim/site/pack/packer/start/cinnamon.nvim",
     url = "https://github.com/declancm/cinnamon.nvim"
   },
-  ["coq.artifacts"] = {
+  ["cmp-buffer"] = {
     loaded = true,
-    path = "/home/paddi/.local/share/nvim/site/pack/packer/start/coq.artifacts",
-    url = "https://github.com/ms-jpq/coq.artifacts"
+    path = "/home/paddi/.local/share/nvim/site/pack/packer/start/cmp-buffer",
+    url = "https://github.com/hrsh7th/cmp-buffer"
   },
-  ["coq.thirdparty"] = {
+  ["cmp-cmdline"] = {
     loaded = true,
-    path = "/home/paddi/.local/share/nvim/site/pack/packer/start/coq.thirdparty",
-    url = "https://github.com/ms-jpq/coq.thirdparty"
+    path = "/home/paddi/.local/share/nvim/site/pack/packer/start/cmp-cmdline",
+    url = "https://github.com/hrsh7th/cmp-cmdline"
   },
-  coq_nvim = {
+  ["cmp-nvim-lsp"] = {
     loaded = true,
-    path = "/home/paddi/.local/share/nvim/site/pack/packer/start/coq_nvim",
-    url = "https://github.com/ms-jpq/coq_nvim"
+    path = "/home/paddi/.local/share/nvim/site/pack/packer/start/cmp-nvim-lsp",
+    url = "https://github.com/hrsh7th/cmp-nvim-lsp"
+  },
+  ["cmp-path"] = {
+    loaded = true,
+    path = "/home/paddi/.local/share/nvim/site/pack/packer/start/cmp-path",
+    url = "https://github.com/hrsh7th/cmp-path"
+  },
+  cmp_luasnip = {
+    loaded = true,
+    path = "/home/paddi/.local/share/nvim/site/pack/packer/start/cmp_luasnip",
+    url = "https://github.com/saadparwaiz1/cmp_luasnip"
   },
   ["crates.nvim"] = {
     loaded = true,
@@ -144,6 +159,11 @@ _G.packer_plugins = {
     loaded = true,
     path = "/home/paddi/.local/share/nvim/site/pack/packer/start/nvim-autopairs",
     url = "https://github.com/windwp/nvim-autopairs"
+  },
+  ["nvim-cmp"] = {
+    loaded = true,
+    path = "/home/paddi/.local/share/nvim/site/pack/packer/start/nvim-cmp",
+    url = "https://github.com/hrsh7th/nvim-cmp"
   },
   ["nvim-dap"] = {
     loaded = true,
@@ -272,6 +292,10 @@ time([[Defining packer_plugins]], false)
 time([[Config for nvim-surround]], true)
 try_loadstring("\27LJ\2\n?\0\0\3\0\3\0\a6\0\0\0'\2\1\0B\0\2\0029\0\2\0004\2\0\0B\0\2\1K\0\1\0\nsetup\18nvim-surround\frequire\0", "config", "nvim-surround")
 time([[Config for nvim-surround]], false)
+-- Config for: cinnamon.nvim
+time([[Config for cinnamon.nvim]], true)
+try_loadstring("\27LJ\2\n6\0\0\3\0\3\0\0066\0\0\0'\2\1\0B\0\2\0029\0\2\0B\0\1\1K\0\1\0\nsetup\rcinnamon\frequire\0", "config", "cinnamon.nvim")
+time([[Config for cinnamon.nvim]], false)
 -- Config for: nvim-neoclip.lua
 time([[Config for nvim-neoclip.lua]], true)
 try_loadstring("\27LJ\2\n5\0\0\3\0\3\0\0066\0\0\0'\2\1\0B\0\2\0029\0\2\0B\0\1\1K\0\1\0\nsetup\fneoclip\frequire\0", "config", "nvim-neoclip.lua")
@@ -280,16 +304,12 @@ time([[Config for nvim-neoclip.lua]], false)
 time([[Config for which-key.nvim]], true)
 try_loadstring("\27LJ\2\nt\0\0\3\0\a\0\0156\0\0\0009\0\1\0+\1\2\0=\1\2\0006\0\0\0009\0\1\0)\1,\1=\1\3\0006\0\4\0'\2\5\0B\0\2\0029\0\6\0004\2\0\0B\0\2\1K\0\1\0\nsetup\14which-key\frequire\15timeoutlen\ftimeout\6o\bvim\0", "config", "which-key.nvim")
 time([[Config for which-key.nvim]], false)
--- Config for: cinnamon.nvim
-time([[Config for cinnamon.nvim]], true)
-try_loadstring("\27LJ\2\n6\0\0\3\0\3\0\0066\0\0\0'\2\1\0B\0\2\0029\0\2\0B\0\1\1K\0\1\0\nsetup\rcinnamon\frequire\0", "config", "cinnamon.nvim")
-time([[Config for cinnamon.nvim]], false)
 vim.cmd [[augroup packer_load_aucmds]]
 vim.cmd [[au!]]
   -- Filetype lazy-loads
 time([[Defining lazy-load filetype autocommands]], true)
-vim.cmd [[au FileType py ++once lua require("packer.load")({'vim-jukit'}, { ft = "py" }, _G.packer_plugins)]]
 vim.cmd [[au FileType ipynb ++once lua require("packer.load")({'vim-jukit'}, { ft = "ipynb" }, _G.packer_plugins)]]
+vim.cmd [[au FileType py ++once lua require("packer.load")({'vim-jukit'}, { ft = "py" }, _G.packer_plugins)]]
 time([[Defining lazy-load filetype autocommands]], false)
 vim.cmd("augroup END")
 
