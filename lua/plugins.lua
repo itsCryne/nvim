@@ -40,7 +40,10 @@ return require('packer').startup(function(use)
 	-- LaTeX suite
 	use 'lervag/vimtex'
 	-- ASCII math
-	use 'jbyuki/nabla.nvim'
+	use({
+		'jbyuki/nabla.nvim',
+		ft = {'tex', 'md'}
+	}) 
 	-- Discord presence
 	use 'andweeb/presence.nvim'
 	-- Jupyter-Notebooks
