@@ -163,5 +163,3 @@ vim.api.nvim_create_autocmd("ColorScheme", {
 		vim.cmd [[hi IndentBlanklineIndent6 guifg=#C678DD gui=nocombine]]
 	end,
 })
-
-

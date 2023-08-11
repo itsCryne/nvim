@@ -118,3 +118,6 @@ nmap <Leader>L <Plug>(easymotion-overwin-line)
 " Move to word
 map  <Leader>w <Plug>(easymotion-bd-w)
 nmap <Leader>w <Plug>(easymotion-overwin-w)
+
+" Find references
+nnoremap <C-[> :lua vim.lsp.buf.references()<CR>
