@@ -109,9 +109,6 @@ require('lualine').setup({
 local npairs = require('nvim-autopairs')
 npairs.setup()
 
--- ASCII math 
-require"nabla".enable_virt()
-
 -- Telescope
 local tel = require("telescope")
 tel.setup()
