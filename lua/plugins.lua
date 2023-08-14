@@ -117,4 +117,5 @@ return require('packer').startup(function(use)
 	use 'tpope/vim-fugitive'
 	use 'easymotion/vim-easymotion'
 	use 'DingDean/wgsl.vim'
+	use 'f-person/auto-dark-mode.nvim'
 end)

@@ -160,3 +160,8 @@ vim.api.nvim_create_autocmd("ColorScheme", {
 		vim.cmd [[hi IndentBlanklineIndent6 guifg=#C678DD gui=nocombine]]
 	end,
 })
+
+-- Automatic dark mode switch (controlled by the DE)
+require('auto-dark-mode').setup({
+	update_interval = 1000
+})
