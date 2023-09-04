@@ -93,7 +93,7 @@ return require('packer').startup(function(use)
 		config = function() require('cinnamon').setup() end
 	}
 	-- disable repetitive keystrokes etc.
-	use "m4xshen/hardtime.nvim"
+	-- use "m4xshen/hardtime.nvim"
 	-- tabline
 	use 'romgrk/barbar.nvim'
 	-- surround manipulation

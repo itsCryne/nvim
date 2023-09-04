@@ -125,7 +125,7 @@ require('crates').setup {
 }
 
 -- disable repetitive keystrokes etc.
-require("hardtime").setup()
+-- require("hardtime").setup()
 -- load legacy.vim
 vim.cmd([[ so ~/.config/nvim/legacy.vim ]])
 
