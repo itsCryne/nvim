@@ -118,4 +118,5 @@ return require('packer').startup(function(use)
 	use 'easymotion/vim-easymotion'
 	use 'DingDean/wgsl.vim'
 	use 'f-person/auto-dark-mode.nvim'
+	use 'ActivityWatch/aw-watcher-vim'
 end)
